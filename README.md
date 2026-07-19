@@ -1,5 +1,7 @@
 # About
 
+[![Build status](https://github.com/rgl/show-version-info-file-flags/workflows/Build/badge.svg)](https://github.com/rgl/show-version-info-file-flags/actions?query=workflow%3ABuild)
+
 This shows a Windows executable [Version Info File Flags](https://learn.microsoft.com/en-us/windows/win32/menurc/versioninfo-resource).
 
 ## Develop
