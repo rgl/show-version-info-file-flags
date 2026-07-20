@@ -2,8 +2,8 @@
 #include <windows.h>
 
 VS_VERSION_INFO VERSIONINFO
-FILEVERSION     0,0,1,0
-PRODUCTVERSION  0,0,1,0
+FILEVERSION     0,0,0,0
+PRODUCTVERSION  0,0,0,0
 FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
 FILEFLAGS       VS_FF_PRERELEASE
 FILEOS          VOS_NT_WINDOWS32
@@ -12,9 +12,15 @@ FILESUBTYPE     0x0L
 BEGIN
     BLOCK "StringFileInfo"
     BEGIN
-        BLOCK "040904b0"
+        BLOCK "040904B0"
         BEGIN
-            VALUE "ProductName", "Show Version Info File Flags\0"
+            VALUE "LegalCopyright",     "ruilopes.com"
+            VALUE "CompanyName",        "ruilopes.com"
+            VALUE "ProductName",        "Show Version Info File Flags"
+            VALUE "ProductVersion",     "0.0.0-dev"
+            VALUE "FileVersion",        "0.0.0-dev"
+            VALUE "FileDescription",    "see https://github.com/rgl/show-version-info-file-flags"
+            VALUE "OriginalFilename",   "show-version-info-file-flags.exe"
         END
     END
     BLOCK "VarFileInfo"

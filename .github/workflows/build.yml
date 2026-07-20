@@ -18,3 +18,26 @@ jobs:
           path-type: inherit
       - name: Build
         run: msys2 ./.github/workflows/build.sh
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: artifacts
+          if-no-files-found: error
+          path: '*.zip'
+  release:
+    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+    name: Release
+    permissions:
+      contents: write
+    runs-on: ubuntu-24.04
+    needs:
+      - build
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v8
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: '*.zip'
+          prerelease: ${{ contains(github.ref, '-') }}
+          token: ${{ secrets.GITHUB_TOKEN }}

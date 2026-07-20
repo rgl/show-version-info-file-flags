@@ -31,6 +31,9 @@ make
 Show the other parts of the executable version info using PowerShell 7+:
 
 ```bash
+# NB this command also returns the Version Info File Flags as the IsDebug,
+#    IsPreRelease, IsPatched, IsPrivateBuild, and IsSpecialBuild properties.
+#    thou, it does not return the VS_FF_INFOINFERRED flag.
 pwsh -Command '(Get-Item show-version-info-file-flags.exe).VersionInfo | Format-List'
 ```
 
